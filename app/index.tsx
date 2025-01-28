@@ -1,54 +1,26 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import "../assets/css/global.css";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import CustomButton from "@/components/CustomButton";
 import React from "react";
-
-// interface CustomButtonProps {
-//   onPress: () => void;
-//   title: string;
-//   textStyle?: string;
-//   containerStyle?: string;
-// }
-
-// const CustomButton = ({
-//   onPress,
-//   title,
-//   textStyle = "",
-//   containerStyle = "",
-// }: CustomButtonProps) => {
-//   return (
-//     <TouchableOpacity
-//       activeOpacity={0.7}
-//       //   style={styles.button}
-//       className="bg-white rounded-xl min-h-[62px] justify-center items-center"
-//       onPress={onPress}
-//     >
-//       <Text className={`font-semibold text-lg text-white  ${textStyle}`}>
-//         {title}
-//       </Text>
-//     </TouchableOpacity>
-//   );
-// };
+import { useRouter } from "expo-router";
+import AppGradient from "@/components/AppGradient";
 
 const App = () => {
+  const router = useRouter();
   return (
     <View className="flex-1">
-      <LinearGradient
-        className="flex-1 justify-center items-center w-full"
-        colors={["#3a6186", "#89253e"]}
-      >
-        <SafeAreaView>
-          <Text className="text-white">Hello Native!</Text>
-          <CustomButton
-            onPress={() => console.log("button tapped")}
-            title="Click me"
-          />
-          <StatusBar style="dark" />
-        </SafeAreaView>
-      </LinearGradient>
+      <AppGradient colors={["#89253e", "#3a6186"]}>
+        <Text className="text-white text-center text-3xl font-bold mx-5 ">
+          Hello Native!
+        </Text>
+        <CustomButton
+          onPress={() => router.push("/chat-list")}
+          title="Open Chat List"
+        />
+      </AppGradient>
     </View>
   );
 };
