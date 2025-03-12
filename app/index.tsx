@@ -11,17 +11,25 @@ import AppGradient from "@/components/AppGradient";
 const App = () => {
   const router = useRouter();
   return (
-    <View className="flex-1">
-      <AppGradient colors={["#89253e", "#3a6186"]}>
-        <Text className="text-white text-center text-3xl font-bold mx-5 ">
-          Hello Native!
-        </Text>
-        <CustomButton
-          onPress={() => router.push("/chat-list")}
-          title="Open Chat List"
-        />
-      </AppGradient>
-    </View>
+    <SafeAreaView
+      className={`flex-1 items-center justify-center bg-gray-900 gap-5`}
+    >
+      <Text className={`text-white text-3xl font-bold`}>
+        Welcome to the App
+      </Text>
+      <CustomButton
+        // className={`mt-5 px-6 py-3 bg-blue-500 rounded-lg`}
+        onPress={() => router.push("/(tabs)/home")}
+        title="Go to Home"
+      />
+      <CustomButton
+        // className={`mt-5 px-6 py-3 bg-blue-500 rounded-lg`}
+        onPress={() => router.push("/auth/login")}
+        title="Login"
+      />
+      {/* <Text className={`text-white text-lg`}>Go to Home</Text> */}
+      {/* </CustomButton> */}
+    </SafeAreaView>
   );
 };
 

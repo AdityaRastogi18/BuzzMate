@@ -21,3 +21,11 @@ export const ChatListData: ChatListDataType[] = [
   { id: 14, name: "Chat Room 14", image: "" },
   { id: 15, name: "Chat Room 15", image: "" },
 ];
+
+export const randomChatRooms = [
+  { id: 1, name: "Tech Geeks" },
+  { id: 2, name: "Movie Lovers" },
+  { id: 3, name: "Crypto Talks" },
+  { id: 4, name: "Startup Founders" },
+  { id: 5, name: "Gaming Hub" },
+];
